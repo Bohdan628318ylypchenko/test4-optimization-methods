@@ -5,22 +5,22 @@ using MathNet.Numerics.LinearAlgebra.Double;
 
 namespace Func2Min
 {
-    internal static class Func2Utils
+    public static class Func2Utils
     {
-        internal static Vector<double> Grad(Func<Vector<double>, double> f,
+        public static Vector<double> Grad(Func<Vector<double>, double> f,
                                             Vector<double> point)
         {
             return point.MapIndexed<double>((i, x) => Differentiate.FirstPartialDerivative(p => f(CreateVector.Dense(p)), 
                                             point.AsArray(), i));
         }
 
-        internal static double LamdaS(Func<Vector<double>, double> f, Vector<double> point,
+        public static double LamdaS(Func<Vector<double>, double> f, Vector<double> point,
                                       Vector<double> s)
         {
             return -1.0 * (Grad(f, point) * s) / ((s * Hesse(f, point)) * s);
         }
 
-        private static Matrix<double> Hesse(Func<Vector<double>, double> f, Vector<double> point)
+        public static Matrix<double> Hesse(Func<Vector<double>, double> f, Vector<double> point)
         {
             // double[] wrappers
             Func<double[], double> arrf = p => f(CreateVector.Dense(p));

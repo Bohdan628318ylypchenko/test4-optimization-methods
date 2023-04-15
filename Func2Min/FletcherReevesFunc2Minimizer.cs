@@ -5,31 +5,35 @@ namespace Func2Min
 {
     public class FletcherReevesFunc2Minimizer : Func2Minimizer
     {
-        private Vector<double> prevGrad = null;
+        private Vector<double> _prevGrad = null;
 
-        private Vector<double> prevS = null;
+        private Vector<double> _prevS = null;
 
-        private bool isFirstSCall = true;
+        private bool _isFirstSCall = true;
 
         protected override Vector<double> S(Func<Vector<double>, double> f, Vector<double> point)
         {
             // Current grad
-            Vector<double> grad;
+            Vector<double> currentGrad;
+            Vector<double> currentS;
             
             // Check for 1st s calculation
-            if (isFirstSCall)
+            if (_isFirstSCall)
             {
                 // 1st time call -> grad, s
-                isFirstSCall = false;
-                prevGrad = Func2Utils.Grad(f, point);
-                prevS = -1.0 * prevGrad;
-                return prevS;
+                _isFirstSCall = false;
+                _prevGrad = Func2Utils.Grad(f, point);
+                _prevS = -1.0 * _prevGrad;
+                return _prevS;
             }
             else
             {
                 // Calc as usual
-                grad = Func2Utils.Grad(f, point);
-                return -1.0 * grad + prevS * (Math.Pow(grad.L2Norm(), 2) / Math.Pow(prevGrad.L2Norm(), 2));
+                currentGrad = Func2Utils.Grad(f, point);
+                currentS = -1.0 * currentGrad + _prevS * (Math.Pow(currentGrad.L2Norm(), 2) / Math.Pow(_prevGrad.L2Norm(), 2));
+                _prevGrad = currentGrad;
+                _prevS = currentS;
+                return currentS;
             }
         }
     }
