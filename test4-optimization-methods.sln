@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Func2Min", "Func2Min\Func2M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{AFEBBE24-4FE2-460E-ACD8-A6343B8B387F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FletcherReevesDemo", "FletcherReevesDemo\FletcherReevesDemo.csproj", "{D35C6D5F-3B20-45B7-B021-9F8CA40CA74A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AFEBBE24-4FE2-460E-ACD8-A6343B8B387F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFEBBE24-4FE2-460E-ACD8-A6343B8B387F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFEBBE24-4FE2-460E-ACD8-A6343B8B387F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35C6D5F-3B20-45B7-B021-9F8CA40CA74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35C6D5F-3B20-45B7-B021-9F8CA40CA74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35C6D5F-3B20-45B7-B021-9F8CA40CA74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35C6D5F-3B20-45B7-B021-9F8CA40CA74A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
